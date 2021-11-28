@@ -19,7 +19,7 @@ public class ShootAutoButScuffed extends CommandBase{
 
     @Override
     public void initialize() {
-       RobotContainer.getShooter().moveShooter(1);
+       RobotContainer.getShooter().moveShooterAuto(1);
        
         
     }

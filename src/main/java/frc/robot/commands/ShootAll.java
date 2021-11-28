@@ -27,7 +27,7 @@ public class ShootAll extends CommandBase
     public void initialize()
     {
         
-        RobotContainer.getShooter().moveShooter(shooterSpeed);
+        RobotContainer.getShooter().moveShooter(RobotContainer.getJoy());
         RobotContainer.getTransport().moveTransport(Constants.TRANSPORT_TELEOP_SPEED);
         startTime = 0;
         timerStarted = false;

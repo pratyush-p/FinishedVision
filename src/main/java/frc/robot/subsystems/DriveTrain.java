@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -142,9 +144,9 @@ public class DriveTrain extends SubsystemBase
         right.stopMotor();
     }
 
-    public void takeJoystickInputs(Joystick joy)
+    public void takeJoystickInputs(XboxController joy)
     {
-        driveBase.arcadeDrive(joy.getY(), -joy.getZ() * 0.65);
+        driveBase.arcadeDrive(joy.getY(Hand.kLeft), -joy.getX(Hand.kRight) * 0.65);
     }
 
     public DifferentialDrive getDriveBase()

@@ -2,6 +2,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 
@@ -40,9 +42,15 @@ public class Shooter extends SubsystemBase
         return shooterBottomEnc;
     }
 
-    public void moveShooter(double speed)
+    public void moveShooter(XboxController joy)
     {
-        shooterMotorBottom.set(-speed);
+        shooterMotorBottom.set(joy.getTriggerAxis(Hand.kRight));
+        shooterMotorTop.set(joy.getTriggerAxis(Hand.kRight));
+    }
+
+    public void moveShooterAuto(double speed)
+    {
+        shooterMotorBottom.set(speed);
         shooterMotorTop.set(speed);
     }
 

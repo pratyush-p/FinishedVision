@@ -16,16 +16,17 @@ public class MoveShooterTeleop extends CommandBase
 
     @Override
     public void initialize() {
-        RobotContainer.getShooter().moveShooter(speed);
+        RobotContainer.getShooter().moveShooter(RobotContainer.getJoy());
     }
 
     @Override
     public void execute() {
+        RobotContainer.getShooter().moveShooter(RobotContainer.getJoy());
     }
 
     @Override
     public boolean isFinished() {
-        return !RobotContainer.getJoy().getRawButton(Constants.SHOOTER_TELEOP);
+        return false;
     }
 
     @Override

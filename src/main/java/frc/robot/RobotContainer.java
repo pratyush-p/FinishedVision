@@ -65,7 +65,7 @@ public class RobotContainer
   //numbers
 
   //joystick
-  private static Joystick joy;
+  private static XboxController joy;
   private static Button intakeButton;
   private static Button transportButton;
   private static Button pulleyButton;
@@ -194,13 +194,13 @@ public class RobotContainer
    */
   private void configureButtonBindings() 
   {
-    joy = new Joystick(0);
+    joy = new XboxController(0);
 
-    intakeButton = new JoystickButton(joy, Constants.INTAKE_BUTTON);
+    //intakeButton = new JoystickButton(joy, Constants.INTAKE_BUTTON);
     transportButton = new JoystickButton(joy, Constants.TRANSPORT_BUTTON);
     pulleyButton = new JoystickButton(joy, Constants.PULLEY_BUTTON);
     tiltButtonUp = new JoystickButton(joy, Constants.TILT_BUTTON_UP);
-    shooterTeleop = new JoystickButton(joy, Constants.SHOOTER_TELEOP);
+    //shooterTeleop = new JoystickButton(joy, Constants.SHOOTER_TELEOP);
     tiltDownButton = new JoystickButton(joy, Constants.TILT_BUTTON_DOWN);
     tiltAuto = new JoystickButton(joy, Constants.TILT_AUTO_BUTTON);
     reverseIntake = new JoystickButton(joy, Constants.REVERSE_INTAKE_BUTTON);
@@ -209,16 +209,16 @@ public class RobotContainer
     visionbtn = new JoystickButton(joy, Constants.VISION_PRINT_BTN);
   
 
-    intakeButton.whileHeld(new MoveIntake(Constants.INTAKE_TELEOP_SPEED));
+    //intakeButton.whileHeld(new MoveIntake(Constants.INTAKE_TELEOP_SPEED));
     transportButton.whenPressed(new MoveTransport(Constants.TRANSPORT_TELEOP_SPEED));
     pulleyButton.whenPressed(new MovePulley(Constants.PULLEY_TELEOP_SPEED));
     tiltButtonUp.whileHeld(new MoveTilt(Constants.TILT_SPEED)); 
-    shooterTeleop.whileHeld(new MoveShooterTeleop(Constants.SHOOTER_TELEOP_SPEED));
+    //shooterTeleop.whileHeld(new MoveShooterTeleop(Constants.SHOOTER_TELEOP_SPEED));
     tiltDownButton.whileHeld(new MoveTilt(-Constants.TILT_SPEED));
     tiltAuto.whenPressed(new MoveTiltAuto(Constants.TILT_SPEED));
     moveElevatorUp.whileHeld(new MoveElevator(Constants.ELEVATOR_SPEED));
     moveElevatorDown.whileHeld(new MoveElevator(-Constants.ELEVATOR_SPEED));
-    reverseIntake.whileHeld(new MoveIntake(-Constants.INTAKE_TELEOP_SPEED));
+    //reverseIntake.whileHeld(new MoveIntake(-Constants.INTAKE_TELEOP_SPEED));
     visionbtn.whileHeld(new VisionPrint());
   }
 
@@ -237,7 +237,7 @@ public class RobotContainer
   public static SpeedControllerGroup getRightSCG(){return rightDrive;}
   public static DifferentialDrive getDiffDrive(){return drive;}
   public static AHRS getAHRS(){return ahrs;}
-  public static Joystick getJoy(){return joy;}
+  public static XboxController getJoy(){return joy;}
   public static Intake getIntake(){return intake;}
   public static Transport getTransport(){return transport;}
   public static Pulley getPulley(){return pulley;}

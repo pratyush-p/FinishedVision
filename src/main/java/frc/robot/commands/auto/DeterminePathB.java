@@ -23,7 +23,7 @@ public class DeterminePathB extends CommandBase
     @Override
     public void initialize()
     {
-        RobotContainer.getIntake().moveIntake(Constants.INTAKE_TELEOP_SPEED);
+        RobotContainer.getIntake().moveIntakeAuto(Constants.INTAKE_TELEOP_SPEED);
         startTime = Timer.getFPGATimestamp();
     }
 
