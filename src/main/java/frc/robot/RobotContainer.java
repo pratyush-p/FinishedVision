@@ -218,7 +218,7 @@ public class RobotContainer
     tiltAuto.whenPressed(new MoveTiltAuto(Constants.TILT_SPEED));
     moveElevatorUp.whileHeld(new MoveElevator(Constants.ELEVATOR_SPEED));
     moveElevatorDown.whileHeld(new MoveElevator(-Constants.ELEVATOR_SPEED));
-    //reverseIntake.whileHeld(new MoveIntake(-Constants.INTAKE_TELEOP_SPEED));
+    reverseIntake.whileHeld(new MoveIntake(-Constants.INTAKE_TELEOP_SPEED));
     visionbtn.whileHeld(new VisionPrint());
   }
 
